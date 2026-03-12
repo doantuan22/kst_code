@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KST CODE HUB</title>
+    <meta
+      name="description"
+      content="Trang giới thiệu và chia sẻ công cụ/phần mềm với liên kết tải trực tiếp."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+    <div class="bg-orb orb-3" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#about">
+        <span class="brand-dot"></span>
+        KST CODE
+      </a>
+      <nav class="main-nav">
+        <a href="#about">Giới thiệu</a>
+        <a href="#software-design">Thiết kế phần mềm/tool</a>
+        <a href="#products">Sản phẩm</a>
+        <a href="#contact" id="contactNavTrigger" aria-haspopup="dialog">Liên hệ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section" id="about">
+        <div class="hero-content glass-card tilt-card">
+          <p class="kicker">Công nghệ thời đại</p>
+          <h1>BỨC PHÁ BẰNG CÔNG NGHỆ</h1>
+          <p class="hero-text">
+            KST CODE chuyên phát triển và cung cấp các giải pháp công nghệ thông minh, giúp đơn giản hóa công việc và nâng cao hiệu suất.
+            Tại đây, mọi người có thể tải và trải nghiệm nhiều sản phẩm, công cụ hữu ích hoàn toàn miễn phí.
+
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#products">Khám phá sản phẩm</a>
+          </div>
+        </div>
+
+        <aside class="contact-card glass-card tilt-card">
+          <h2>Thông tin liên hệ</h2>
+          <ul>
+            <li>
+              <span>Email:</span>
+              <a href="mailto:youremail@example.com">tuan0947881956@gmail.com</a>
+            </li>
+            <li>
+              <span>Điện thoại:</span>
+              <a href="tel:+84901234567">+84 0947881956</a>
+            </li>
+            <li>
+              <span>GitHub:</span>
+              <a>Chưa cập nhật</a
+              >
+            </li>
+            <li>
+              <span>Facebook:</span>
+              <a>Chưa cập nhật</a
+              >
+            </li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="service section" id="software-design">
+        <div class="section-head">
+          <p class="kicker">Dịch vụ</p>
+          <h2>THIẾT KẾ PHẦN MỀM/TOOL THEO YÊU CẦU</h2>
+          <p>Hãy nói ra ý tưởng của bạn KST CODE sẽ thực hiện giúp bạn</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card glass-card tilt-card">
+            <h3>MÔ TẢ </h3>
+            <p>
+              KST CODE chuyên thiết kế và phát triển các phần mềm, tool và giải pháp công nghệ theo yêu cầu.
+              Chúng tôi tập trung vào các ứng dụng Windows, công cụ tự động hóa và phát triển hệ thống web với frontend và backend bằng Python.
+              Với kinh nghiệm trong C++, Python, JavaScript và Node.js, KST CODE mang đến những giải pháp mạnh mẽ, linh hoạt và tối ưu cho từng nhu cầu cụ thể.
+            </p>
+          </article>
+
+          <aside class="zalo-card glass-card tilt-card">
+            <h3>Liên hệ qua Zalo</h3>
+            <p>Vui lòng liên hệ qua zalo để trao đổi công việc.</p>
+            <button
+              class="btn btn-primary"
+              id="zaloToggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="zaloInfo"
+            >
+              Thông tin Zalo
+            </button>
+            <div class="zalo-info" id="zaloInfo" hidden>
+              <p><strong>Zalo:</strong> Đoàn Tuấn</p>
+              <p><strong>SĐT:</strong> 0947881956</p>
+              <p><strong>Nếu chúng tôi chậm trễ trong việc trả lời tin nhắn mong bạn thông cảm!</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="products section" id="products">
+        <div class="section-head">
+          <p class="kicker">Danh mục sản phẩm</p>
+          <h2>Tool / Phần mềm nổi bật</h2>
+        </div>
+
+        <div class="controls glass-card tilt-card">
+          <div class="control-row">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Tìm theo tên sản phẩm..."
+              aria-label="Tìm kiếm sản phẩm"
+            />
+          </div>
+          <div class="control-row filter-group" role="group" aria-label="Bộ lọc danh mục">
+            <button class="filter-btn active" data-filter="all">Tất cả</button>
+            <button class="filter-btn" data-filter="tool">Tool</button>
+            <button class="filter-btn" data-filter="software">Phần mềm</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+
+        <div
+          class="product-detail-modal"
+          id="productDetailModal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="productDetailTitle"
+          aria-hidden="true"
+          hidden
+        >
+          <div class="product-detail-overlay" id="productDetailOverlay"></div>
+          <article class="product-detail-content glass-card tilt-card">
+            <button
+              class="product-detail-close"
+              type="button"
+              id="productDetailClose"
+              aria-label="Dong"
+            >
+              ×
+            </button>
+            <p class="product-detail-kicker">Giới thiệu chi tiết</p>
+            <h3 id="productDetailTitle"></h3>
+            <p class="product-detail-meta" id="productDetailMeta"></p>
+            <p class="product-detail-text" id="productDetailContent"></p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div
+      class="contact-modal"
+      id="contactModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contactModalTitle"
+      aria-hidden="true"
+      hidden
+    >
+      <div class="contact-modal-overlay" id="contactModalOverlay"></div>
+      <aside class="contact-modal-content contact-card glass-card tilt-card">
+        <button
+          class="contact-modal-close"
+          type="button"
+          id="contactModalClose"
+          aria-label="Đóng"
+        >
+          ×
+        </button>
+        <h2 id="contactModalTitle">Thông tin liên hệ</h2>
+        <ul>
+          <li>
+            <span>Email:</span>
+            <a href="mailto:youremail@example.com">tuan0947881956@gmail.com</a>
+          </li>
+          <li>
+            <span>Điện thoại:</span>
+            <a href="tel:+84901234567">+84 0947881956</a>
+          </li>
+          <li>
+            <span>GitHub:</span>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+              >github.com/yourname</a
+            >
+          </li>
+          <li>
+            <span>Facebook:</span>
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer"
+              >facebook.com/yourname</a
+            >
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer class="site-footer section" id="contact">
+      <p>
+        © <span id="yearNow"></span> KST – Knowledge & Software Technology
+      </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
